@@ -45,6 +45,13 @@ sudo systemctl start elasticsearch.service # or sudo service elasticsearch start
 curl -X GET "localhost:9200/"
 ```
 
+### Download pre-processed BM25 index (optional)
+```bash
+# cd ./beir
+wget https://github.com/JetRunner/LaPraDoR/releases/download/v0.1/BM25-result.zip
+unzip BM25-result.zip
+```
+
 ### Retrieve with LaPraDoR
 
 ```bash
