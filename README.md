@@ -66,7 +66,7 @@ To use your own dataset, please process the data to the same format as [BEIR](ht
 
 ### Citation
 ```bibtex
-@inproceedings{acl2022b,
+@inproceedings{xu2022laprador,
     title={{LaPraDoR}: Unsupervised Pretrained Dense Retriever for Zero-Shot Text Retrieval},
     author={Canwen Xu and Daya Guo and Nan Duan and Julian McAuley},
     booktitle={{ACL} 2022 (Findings)},
