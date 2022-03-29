@@ -18,34 +18,7 @@ pip install -e .
 pip install tensorflow==2.5.0
 ```
 
-### Install Elasticsearch
-
-#### Installation
-
-Following [this link](https://linuxize.com/post/how-to-install-elasticsearch-on-ubuntu-18-04/) to download Elasticsearch. Here, we use Ubuntu 18.04 as an example.
-
-```bash
-sudo apt update
-sudo apt install apt-transport-https
-sudo mkdir -p /usr/share/man/man1
-sudo apt install openjdk-8-jdk
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-sudo sh -c 'echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" > /etc/apt/sources.list.d/elastic-7.x.list'
-sudo apt update
-sudo apt install elasticsearch
-```
-
-#### Start Elasticsearch
-
-```bash
-sudo systemctl enable elasticsearch.service # or sudo service elasticsearch enable
-sudo systemctl start elasticsearch.service # or sudo service elasticsearch start
-
-# You can verify that Elasticsearch is running by sending an HTTP request to port 9200 on localhost with the following curl command:
-curl -X GET "localhost:9200/"
-```
-
-### Download pre-processed BM25 index (optional)
+### Download pre-processed BM25 index
 ```bash
 # cd ./beir
 wget https://github.com/JetRunner/LaPraDoR/releases/download/v0.1/BM25-result.zip
@@ -61,8 +34,35 @@ split=test
 python laprador.py $dataset $split
 ```
 
-### Use your own dataset
-To use your own dataset, please process the data to the same format as [BEIR](https://github.com/beir-cellar/beir#beers-available-datasets) and then index the dataset following `bm25.py`.
+### Use your own dataset (requires Elasticsearch)
+To use your own dataset, please process the data to the same format as [BEIR](https://github.com/beir-cellar/beir#beers-available-datasets) and then index the dataset following `bm25.py`. You will need Elasticsearch to index the corpus.
+
+#### Install Elasticsearch
+
+##### Installation
+
+Following [this link](https://linuxize.com/post/how-to-install-elasticsearch-on-ubuntu-18-04/) to download Elasticsearch. Here, we use Ubuntu 18.04 as an example.
+
+```bash
+sudo apt update
+sudo apt install apt-transport-https
+sudo mkdir -p /usr/share/man/man1
+sudo apt install openjdk-8-jdk
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo sh -c 'echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" > /etc/apt/sources.list.d/elastic-7.x.list'
+sudo apt update
+sudo apt install elasticsearch
+```
+
+##### Start Elasticsearch
+
+```bash
+sudo systemctl enable elasticsearch.service # or sudo service elasticsearch enable
+sudo systemctl start elasticsearch.service # or sudo service elasticsearch start
+
+# You can verify that Elasticsearch is running by sending an HTTP request to port 9200 on localhost with the following curl command:
+curl -X GET "localhost:9200/"
+```
 
 ### Citation
 ```bibtex
