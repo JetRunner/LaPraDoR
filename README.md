@@ -1,4 +1,4 @@
-## 🦮 LaPraDoR
+<img width="1204" alt="LaPraDoR promotion" src="https://user-images.githubusercontent.com/22514219/160527465-049cdc62-ce23-46e3-97fd-ad5f543e093c.png">
 
 Code and pretrained models for Findings of ACL 2022 paper [LaPraDoR: Unsupervised Pretrained Dense Retriever for Zero-Shot Text Retrieval](https://arxiv.org/abs/2203.06169).
 
