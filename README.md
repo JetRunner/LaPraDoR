@@ -64,3 +64,12 @@ python laprador.py $dataset $split
 ### Use your own dataset
 To use your own dataset, please process the data to the same format as [BEIR](https://github.com/beir-cellar/beir#beers-available-datasets) and then index the dataset following `bm25.py`.
 
+### Citation
+```bibtex
+@inproceedings{acl2022b,
+    title={{LaPraDoR}: Unsupervised Pretrained Dense Retriever for Zero-Shot Text Retrieval},
+    author={Canwen Xu and Daya Guo and Nan Duan and Julian McAuley},
+    booktitle={{ACL} 2022 (Findings)},
+    year={2022}
+}
+```
