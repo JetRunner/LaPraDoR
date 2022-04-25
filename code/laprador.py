@@ -14,6 +14,8 @@ from beir.retrieval.search.dense import DenseRetrievalExactSearch as DRES
 
 
 model = DRES(models.SentenceBERT("canwenxu/laprador"), batch_size=512)
+model.model.q_model.max_seq_length = 350
+model.model.doc_model.max_seq_length = 350
 retriever = EvaluateRetrieval(model, score_function="cos_sim")
 
 
